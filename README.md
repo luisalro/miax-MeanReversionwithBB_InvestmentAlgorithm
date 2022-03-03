@@ -10,7 +10,7 @@ From the BME end point you will be able to download the daily stock data, indica
 
 Until 30/3/20 you will be able to send the complete history of orders and see the evolution of the algorithm in order to decide whether which algorithm to use.
 
-### During the practice evaluation
+### During exercise evaluation:
 
 As of 31/3/20, every day you will need to execute the algorithm sending the resulting ordersto BME end point. You must send the orders before the opening (between 7 and 9 in the morning). 
 
