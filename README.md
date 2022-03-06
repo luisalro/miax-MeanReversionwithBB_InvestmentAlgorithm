@@ -15,7 +15,7 @@ As of 31/3/20, we execute the algorithm daily, sending the resulting orders to t
 The output is similar to an index, or an ETF. On a daily basis, we indicate the percentage of capital in which we want to be invested for each asset in the index. All sales operations will be carried out at the opening auction. All purchase operations will be carried out at the closing auction. We will send the orders before the opening (between 7 and 9 in the morning).
 
 
-Note: All the orders have been sent during COVID 19 crisis, a black swan event. Please check the Mean Reversion systems during COVID-19 (Black Swan event) presentation in order to see the results, conclusions and further steps.
+Note: All the orders have been sent during COVID 19 crisis, a black swan event. Please check the Mean Reversion systems during COVID-19 (Black Swan event) presentation in order to see the results, conclusions and further steps (use of computing to enhance in order to optimize the portfolio).
 
 ### Deliverable
 
