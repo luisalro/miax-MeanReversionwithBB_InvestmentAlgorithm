@@ -1,4 +1,8 @@
-This lab was created by Guillermo Melendez , professor from mIA-X master's degree at BME Institute. Scripts can be programmed in either Python or R.
+This lab was created by Guillermo Melendez , professor from mIA-X master's degree at BME Institute. Scripts can be coded in either Python or R.
+
+Check out his LinkedIn profile.
+
+<a href="https://www.linkedin.com/in/dptoestrategia/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
 
 ### Instructions
 
