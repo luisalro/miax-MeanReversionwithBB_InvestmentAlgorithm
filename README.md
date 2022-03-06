@@ -1,4 +1,4 @@
-This exercise was created by Guillermo Melendez , professor from mIA-X master's degree at BME Institute. Scripts can be programmed in either Python or R.
+This lab was created by Guillermo Melendez , professor from mIA-X master's degree at BME Institute. Scripts can be programmed in either Python or R.
 
 ### Instructions
 
