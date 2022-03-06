@@ -4,13 +4,13 @@ import numpy as np
 import requests, json
 from api import API
 
-class MarketData():
-    __competi = API.competi()
-    __user_key = API.user_key()
-    __url_base = API.url_base()
+class Market():
+    __competi = API.get_competi()
+    __user_key = API.get_user_key()
+    __url_base = API.get_url_base()
     
     def __init__(self, market, year=datetime.now().year, month=datetime.now().month, day=datetime.now().day):
-        assert market in ["IBEX", "DAX", "EUROSTOXX"]
+        assert market in ["IBEX", "DAX", "EUROSTOXX"], "Not a valid market. The market must be IBEX, DAX or EUROSTOXX"
         
         try:
             self.__date = date(int(year), int(month), int(day))
@@ -18,31 +18,23 @@ class MarketData():
             raise ValueError(exc.args)
         
         self.__market_name = market
-        self.__ticker_master = API.ticker_master(self.__market_name)
+        self.__ticker_master = API.get_ticker_master(self.__market_name)
         self.__stocks = self.__ticker_master['ticker']
         self.__initialize_attributes()
         self.__ohlcv()
         
+        # Get previous day in case the market is closed today
         if (self.__date == datetime.now().date()):
             self.__date = datetime.now().date() - timedelta(days=1)
-            
-    def __stocks_date(self, dataframe):
-      
-        date_str = self.__date.strftime("%Y-%m-%dT%H:%M:%S")
-        end_date_condition = (self.__ticker_master['end_date'] >= date_str) | (self.__ticker_master['end_date'] == "")
-        boolean_condition = (self.__ticker_master['start_date'] <= date_str) & (end_date_condition)
-        stocks_date = self.__ticker_master[boolean_condition]['ticker']
-        
-        return dataframe.loc[:, stocks_date]
         
     def __ohlcv(self): 
         for stock in self.__stocks:
-            historical_data = API.historical_data(stock, self.__market_name)
-            self.__open = pd.concat([self.__open, historical_data['open']], axis=1)
-            self.__high = pd.concat([self.__high, historical_data['high']], axis=1)
-            self.__low = pd.concat([self.__low, historical_data['low']], axis=1)
-            self.__close = pd.concat([self.__close, historical_data['close']], axis=1)
-            self.__volume = pd.concat([self.__volume, historical_data['vol']], axis=1)
+            price_series = API.get_price_series(stock, self.__market_name)
+            self.__open = pd.concat([self.__open, price_series['open']], axis=1)
+            self.__high = pd.concat([self.__high, price_series['high']], axis=1)
+            self.__low = pd.concat([self.__low, price_series['low']], axis=1)
+            self.__close = pd.concat([self.__close, price_series['close']], axis=1)
+            self.__volume = pd.concat([self.__volume, price_series['vol']], axis=1)
             
         self.__rename_columns()
         self.__establish_dataframes_index_as_datetime()
@@ -72,19 +64,19 @@ class MarketData():
         return self.__open, self.__high, self.__low, self.__close
 
     def get_open(self):
-        return self.__stocks_date(self.__open)
+        return self.__open
 
     def get_high(self):
-        return self.__stocks_date(self.__high)
+        return self.__high
     
     def get_low(self):
-        return self.__stocks_date(self.__low)
+        return self.__low
 
     def get_close(self):
-        return self.__stocks_date(self.__close)
+        return self.__close
     
     def get_volume(self):
-        return self.__stocks_date(self.__volume)
+        return self.__volume
 
     def get_date(self):
         return self.__date.strftime("%Y-%m-%d")
