@@ -2,27 +2,20 @@ This exercise was created by Guillermo Melendez , professor from mIA-X master's 
 
 ### Instructions
 
-From the BME end point you will be able to download the daily stock data, indicating the index, the ticker and the date range that you need (with this you will obtain the data of all the assets of IBEX, DAX or EUROSTOXX indexes). The data are homogenized, adjusted and without survivorship bias. 
+## Input
 
-### During algorithm development:
+From the BME endpoint you will be able to download the daily stock data, indicating the index, the ticker and the date range that you need (with this you will obtain the data of all the assets of IBEX, DAX or EUROSTOXX indexes). The data are homogenized, adjusted and without survivorship bias. 
 
-Until 30/3/20 you will be able to send the complete history of orders and see the evolution of the algorithm in order to decide whether which algorithm to use.
+## Execution
 
-### During exercise evaluation:
+As of 31/3/20, we execute the algorithm daily, sending the resulting orders to the broker in order to . We will send the orders before the opening (between 7 and 9 in the morning). 
 
-As of 31/3/20, every day you will need to execute the algorithm sending the resulting orders to BME end point. You must send the orders before the opening (between 7 and 9 in the morning). 
+## Output
 
-The output would be similar to an index, or an ETF.
+The output is similar to an index, or an ETF. On a daily basis, we indicate the percentage of capital in which we want to be invested for each asset in the index. All sales operations will be carried out at the opening auction. All purchase operations will be carried out at the closing auction. We will send the orders before the opening (between 7 and 9 in the morning).
 
-Every day you have to indicate the percentage of capital in which you want to be invested for each asset of the index.
 
-If you want to maintain the proportion, you don't need to send anything. Only when you want to rebalance.
-
-All sales operations will be carried out at the opening auction.
-
-All purchase operations will be carried out in a closing auction.
-
-Note: All the orders have been sent during COVID 19 crisis.
+Note: All the orders have been sent during COVID 19 crisis, a black swan event. Please check the Mean Reversion systems during COVID-19 (Black Swan event) presentation in order to see the results, conclusions and further steps.
 
 ### Deliverable
 
