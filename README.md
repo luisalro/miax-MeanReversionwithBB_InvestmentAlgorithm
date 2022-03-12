@@ -29,4 +29,4 @@ Note: All the orders have been sent during COVID 19 crisis, a black swan event. 
 
 ### Deliverable
 
-The algorithm will consist of a mean reversion with Bollinger Bands allocator trading strategy used on IBEX. It will be coded in Python.
+The algorithm will consist of a mean reversion with Bollinger Bands allocator trading strategy used on IBEX. The delivered Jupyter Notebook and scripts will be coded in Python.
