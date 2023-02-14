@@ -1,10 +1,5 @@
 This lab was created by Guillermo Meléndez , professor from mIA-X master's degree at BME Institute. Scripts can be coded in either Python or R.
 
-Check out his LinkedIn profile.
-
-<a href="https://www.linkedin.com/in/dptoestrategia/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
-
-
 ## Introduction
 
 A mean reversion trading strategy involves betting that prices will revert back towards the mean or average. Markets are forever moving in and out of phases of mean reversion and momentum. Therefore it’s possible to develop strategies for both types of market. A simplistic example of a mean reversion strategy is to buy a stock after it has had a large fall in price. When a stock has seen a big drop, there’s usually a good chance that it will bounce back to a more normal level.
