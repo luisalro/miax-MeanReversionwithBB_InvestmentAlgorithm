@@ -11,7 +11,7 @@ From the BME endpoint you will be able to download the daily stock data, indicat
 
 ### Execution
 
-As of 31/3/20, we execute the algorithm daily, sending the resulting orders to the broker in order to . We will send the orders before the opening (between 7 and 9 in the morning). 
+As of 31/3/20, we execute the algorithm daily, sending the resulting orders to the broker. We will send the orders before the opening (between 7 and 9 in the morning). 
 
 ### Output
 
